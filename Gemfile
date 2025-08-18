@@ -25,7 +25,7 @@ gem 'bundler-checksum', '~> 0.1.0', path: 'vendor/gems/bundler-checksum', requir
 #
 # See https://docs.gitlab.com/ee/development/gemfile.html#upgrade-rails for guidelines when upgrading Rails
 
-gem 'rails', '~> 7.1.5.1', feature_category: :shared
+gem 'rails', '~> 7.1.5.2', feature_category: :shared
 
 gem 'activerecord-gitlab', path: 'gems/activerecord-gitlab', feature_category: :shared
 # This can be dropped after upgrading to Rails 7.2: https://github.com/rails/rails/pull/49674
@@ -122,7 +122,7 @@ gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos, feature_category: :system_ac
 # Spam and anti-bot protection
 gem 'recaptcha', '~> 5.12', require: 'recaptcha/rails', feature_category: :insider_threat
 gem 'akismet', '~> 3.0', feature_category: :insider_threat
-gem 'invisible_captcha', '~> 2.1.0', feature_category: :insider_threat
+gem 'invisible_captcha', '~> 2.2.0', feature_category: :insider_threat
 
 # Two-factor authentication
 gem 'devise-two-factor', '~> 4.1.1', feature_category: :system_access
@@ -288,7 +288,7 @@ group :puma do
 end
 
 # State machine
-gem 'state_machines-activerecord', '~> 0.8.0', feature_category: :shared
+gem 'state_machines-activerecord', '~> 0.9.0', feature_category: :shared
 
 # Background jobs
 gem 'sidekiq', path: 'vendor/gems/sidekiq', require: 'sidekiq', feature_category: :scalability
@@ -512,7 +512,7 @@ group :development, :test do
 
   gem 'awesome_print', require: false, feature_category: :shared
 
-  gem 'database_cleaner-active_record', '~> 2.2.0', feature_category: :database
+  gem 'database_cleaner-active_record', '~> 2.2.1', feature_category: :database
   gem 'rspec-rails', '~> 7.0.0', feature_category: :shared
   gem 'factory_bot_rails', '~> 6.4.3', feature_category: :tooling
 
@@ -659,7 +659,7 @@ gem 'toml-rb', '~> 2.2.0', feature_category: :shared
 
 # Feature toggles
 gem 'flipper', '~> 0.28.0', feature_category: :shared
-gem 'flipper-active_record', '~> 0.28.0', feature_category: :shared
+gem 'flipper-active_record', '~> 1.0.0', feature_category: :shared
 gem 'flipper-active_support_cache_store', '~> 0.28.0', feature_category: :shared
 gem 'unleash', '~> 3.2.2', feature_category: :shared
 gem 'gitlab-experiment', '~> 0.9.1', feature_category: :shared
@@ -755,7 +755,7 @@ gem 'duo_api', '~> 1.3', feature_category: :system_access
 
 gem 'gitlab-sdk', '~> 0.3.0', feature_category: :application_instrumentation
 
-gem 'paper_trail', '~> 15.0', feature_category: :shared
+gem 'paper_trail', '~> 15.2', '>= 15.2.0', feature_category: :shared
 
 gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 
