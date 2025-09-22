@@ -90,9 +90,9 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.14', feature_category: :system_access
 gem 'doorkeeper', '~> 5.8', '>= 5.8.1', feature_category: :system_access
 gem 'doorkeeper-openid_connect', '~> 1.8.10', feature_category: :system_access
 gem 'doorkeeper-device_authorization_grant', '~> 1.0.0', feature_category: :system_access
-gem 'rexml', '~> 3.4.0', feature_category: :shared
-gem 'ruby-saml', '~> 1.18', feature_category: :system_access
-gem 'omniauth-saml', '~> 2.2.1', feature_category: :system_access
+gem 'rexml', '~> 3.4.2', feature_category: :shared
+gem 'ruby-saml', '~> 1.18', '>= 1.18.1', feature_category: :system_access
+gem 'omniauth-saml', '~> 2.2.4', feature_category: :system_access
 gem 'omniauth', '~> 2.1.0', feature_category: :system_access
 gem 'omniauth-auth0', '~> 3.1', feature_category: :system_access
 gem 'omniauth-azure-activedirectory-v2', '~> 2.0', feature_category: :system_access
@@ -191,14 +191,14 @@ gem 'mini_magick', '~> 4.12', feature_category: :shared
 
 # PDF generation
 gem 'prawn', feature_category: :vulnerability_management
-gem 'prawn-svg', feature_category: :vulnerability_management
+gem 'prawn-svg', '>= 0.38.0', feature_category: :vulnerability_management
 
 # for backups
 gem 'fog-aws', '~> 3.26', feature_category: :shared
 # Locked until fog-google resolves https://github.com/fog/fog-google/issues/421.
 # Also see config/initializers/fog_core_patch.rb.
 gem 'fog-core', '= 2.1.0', feature_category: :shared
-gem 'fog-google', '~> 1.24.1', require: 'fog/google', feature_category: :shared
+gem 'fog-google', '~> 1.25.0', require: 'fog/google', feature_category: :shared
 gem 'fog-local', '~> 0.8', feature_category: :shared
 # NOTE:
 # the fog-aliyun gem since v0.4 pulls in aliyun-sdk transitively, which monkey-patches
@@ -213,19 +213,19 @@ gem 'gitlab-fog-azure-rm', '~> 2.2.0', require: 'fog/azurerm', feature_category:
 
 # Need this specific version of google-apis-storage_v1 so that fog-google will utilize the updated list_objects with
 # match_glob support in google-apis-core 0.11.1. Because of this we also have to bump google-cloud-storage to 1.45.0.
-gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
-gem 'google-cloud-storage', '~> 1.45.0', feature_category: :shared
+gem 'google-apis-storage_v1', '~> 0.30', '>= 0.30.0', feature_category: :shared
+gem 'google-cloud-storage', '~> 1.46.0', feature_category: :shared
 # We need >= 0.11.1 because that's when match_glob support is added to list_objects
-gem 'google-apis-core', '~> 0.11.0', '>= 0.11.1', feature_category: :shared
-gem 'google-apis-compute_v1', '~> 0.57.0', feature_category: :shared
-gem 'google-apis-container_v1', '~> 0.43.0', feature_category: :shared
-gem 'google-apis-container_v1beta1', '~> 0.43.0', feature_category: :shared
-gem 'google-apis-cloudbilling_v1', '~> 0.22.0', feature_category: :shared
-gem 'google-apis-cloudresourcemanager_v1', '~> 0.31.0', feature_category: :shared
-gem 'google-apis-iam_v1', '~> 0.36.0', feature_category: :shared
-gem 'google-apis-serviceusage_v1', '~> 0.28.0', feature_category: :shared
-gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
-gem 'google-apis-androidpublisher_v3', '~> 0.34.0', feature_category: :shared
+gem 'google-apis-core', '~> 0.11.3', feature_category: :shared
+gem 'google-apis-compute_v1', '~> 0.58.0', feature_category: :shared
+gem 'google-apis-container_v1', '~> 0.44.0', feature_category: :shared
+gem 'google-apis-container_v1beta1', '~> 0.44.0', feature_category: :shared
+gem 'google-apis-cloudbilling_v1', '~> 0.23.0', feature_category: :shared
+gem 'google-apis-cloudresourcemanager_v1', '~> 0.32.0', feature_category: :shared
+gem 'google-apis-iam_v1', '~> 0.37.0', feature_category: :shared
+gem 'google-apis-serviceusage_v1', '~> 0.29.0', feature_category: :shared
+gem 'google-apis-sqladmin_v1beta4', '~> 0.42.0', feature_category: :shared
+gem 'google-apis-androidpublisher_v3', '~> 0.35.0', feature_category: :shared
 
 gem 'googleauth', '~> 1.8.1', feature_category: :shared
 gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
@@ -475,8 +475,8 @@ group :development do
   gem 'lefthook', '~> 1.11.0', require: false, feature_category: :tooling
   gem 'rubocop', feature_category: :tooling
 
-  gem 'solargraph', '~> 0.54.0', require: false, feature_category: :shared
-  gem 'solargraph-rspec', '~> 0.5.1', require: false, feature_category: :shared
+  gem 'solargraph', '~> 0.54.1', require: false, feature_category: :shared
+  gem 'solargraph-rspec', '~> 0.5.2', require: false, feature_category: :shared
 
   gem 'letter_opener_web', '~> 3.0.0', feature_category: :shared
   gem 'lookbook', '~> 2.3', feature_category: :shared
@@ -557,13 +557,13 @@ group :development, :test do
 end
 
 group :development, :test, :danger do
-  gem 'gitlab-dangerfiles', '~> 4.9.0', require: false, feature_category: :tooling
+  gem 'gitlab-dangerfiles', '~> 4.9.2', require: false, feature_category: :tooling
 end
 
 group :development, :test, :coverage do
   gem 'simplecov', '~> 0.22', require: false, feature_category: :tooling
   gem 'simplecov-lcov', '~> 0.8.0', require: false, feature_category: :tooling
-  gem 'simplecov-cobertura', '~> 2.1.0', require: false, feature_category: :tooling
+  gem 'simplecov-cobertura', '~> 3.0.0', require: false, feature_category: :tooling
   gem 'undercover', '~> 0.6.0', require: false, feature_category: :tooling
 end
 
@@ -587,7 +587,7 @@ group :test do
 
   gem 'capybara', '~> 3.40', feature_category: :test_platform
   gem 'capybara-screenshot', '~> 1.0.26', feature_category: :test_platform
-  gem 'selenium-webdriver', '~> 4.21', '>= 4.21.1', feature_category: :test_platform
+  gem 'selenium-webdriver', '~> 4.28', '>= 4.28.0', feature_category: :test_platform
 
   gem 'graphlyte', '~> 1.0.0', feature_category: :shared
 
@@ -605,7 +605,7 @@ group :test do
   # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
   gem 'derailed_benchmarks', require: false, feature_category: :shared
 
-  gem 'gitlab_quality-test_tooling', '~> 2.10.0', require: false, feature_category: :tooling
+  gem 'gitlab_quality-test_tooling', '~> 2.11.0', require: false, feature_category: :tooling
 end
 
 gem 'octokit', '~> 9.0', feature_category: :importers
