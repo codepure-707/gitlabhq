@@ -198,7 +198,7 @@ gem 'fog-aws', '~> 3.26', feature_category: :shared
 # Locked until fog-google resolves https://github.com/fog/fog-google/issues/421.
 # Also see config/initializers/fog_core_patch.rb.
 gem 'fog-core', '= 2.1.0', feature_category: :shared
-gem 'fog-google', '~> 1.24.1', require: 'fog/google', feature_category: :shared
+gem 'fog-google', '~> 1.25.0', require: 'fog/google', feature_category: :shared
 gem 'fog-local', '~> 0.8', feature_category: :shared
 # NOTE:
 # the fog-aliyun gem since v0.4 pulls in aliyun-sdk transitively, which monkey-patches
@@ -213,19 +213,19 @@ gem 'gitlab-fog-azure-rm', '~> 2.2.0', require: 'fog/azurerm', feature_category:
 
 # Need this specific version of google-apis-storage_v1 so that fog-google will utilize the updated list_objects with
 # match_glob support in google-apis-core 0.11.1. Because of this we also have to bump google-cloud-storage to 1.45.0.
-gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
-gem 'google-cloud-storage', '~> 1.45.0', feature_category: :shared
+gem 'google-apis-storage_v1', '~> 0.30', '>= 0.30.0', feature_category: :shared
+gem 'google-cloud-storage', '~> 1.46.0', feature_category: :shared
 # We need >= 0.11.1 because that's when match_glob support is added to list_objects
-gem 'google-apis-core', '~> 0.11.0', '>= 0.11.1', feature_category: :shared
-gem 'google-apis-compute_v1', '~> 0.57.0', feature_category: :shared
-gem 'google-apis-container_v1', '~> 0.43.0', feature_category: :shared
-gem 'google-apis-container_v1beta1', '~> 0.43.0', feature_category: :shared
-gem 'google-apis-cloudbilling_v1', '~> 0.22.0', feature_category: :shared
-gem 'google-apis-cloudresourcemanager_v1', '~> 0.31.0', feature_category: :shared
-gem 'google-apis-iam_v1', '~> 0.36.0', feature_category: :shared
-gem 'google-apis-serviceusage_v1', '~> 0.28.0', feature_category: :shared
-gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
-gem 'google-apis-androidpublisher_v3', '~> 0.34.0', feature_category: :shared
+gem 'google-apis-core', '~> 0.15.1', feature_category: :shared
+gem 'google-apis-compute_v1', '~> 0.58.0', feature_category: :shared
+gem 'google-apis-container_v1', '~> 0.44.0', feature_category: :shared
+gem 'google-apis-container_v1beta1', '~> 0.44.0', feature_category: :shared
+gem 'google-apis-cloudbilling_v1', '~> 0.23.0', feature_category: :shared
+gem 'google-apis-cloudresourcemanager_v1', '~> 0.32.0', feature_category: :shared
+gem 'google-apis-iam_v1', '~> 0.37.0', feature_category: :shared
+gem 'google-apis-serviceusage_v1', '~> 0.29.0', feature_category: :shared
+gem 'google-apis-sqladmin_v1beta4', '~> 0.42.0', feature_category: :shared
+gem 'google-apis-androidpublisher_v3', '~> 0.35.0', feature_category: :shared
 
 gem 'googleauth', '~> 1.8.1', feature_category: :shared
 gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
@@ -605,7 +605,7 @@ group :test do
   # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
   gem 'derailed_benchmarks', require: false, feature_category: :shared
 
-  gem 'gitlab_quality-test_tooling', '~> 2.10.0', require: false, feature_category: :tooling
+  gem 'gitlab_quality-test_tooling', '~> 2.11.0', require: false, feature_category: :tooling
 end
 
 gem 'octokit', '~> 9.0', feature_category: :importers
@@ -662,7 +662,7 @@ gem 'flipper', '~> 0.28.0', feature_category: :shared
 gem 'flipper-active_record', '~> 0.28.0', feature_category: :shared
 gem 'flipper-active_support_cache_store', '~> 0.28.0', feature_category: :shared
 gem 'unleash', '~> 3.2.2', feature_category: :shared
-gem 'gitlab-experiment', '~> 0.9.1', feature_category: :shared
+gem 'gitlab-experiment', '~> 1.0.0', feature_category: :shared
 
 # Structured logging
 gem 'lograge', '~> 0.5', feature_category: :shared
