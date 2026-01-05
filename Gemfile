@@ -302,7 +302,7 @@ gem 'gitlab-sidekiq-fetcher',
 gem 'fugit', '~> 1.11.1', feature_category: :continuous_integration
 
 # HTTP requests
-gem 'httparty', '~> 0.22.0', feature_category: :shared
+gem 'httparty', '~> 0.24.0', feature_category: :shared
 
 # Colored output to console
 gem 'rainbow', '~> 3.0', feature_category: :shared
@@ -548,7 +548,7 @@ group :development, :test do
 
   # For now we only use vite in development / test, and not for production builds
   # See: https://gitlab.com/gitlab-org/frontend/rfcs/-/issues/106
-  gem 'vite_rails', '~> 3.0.17', feature_category: :shared
+  gem 'vite_rails', '~> 3.0.20', feature_category: :shared
   gem 'vite_ruby', '~> 3.9.0', feature_category: :shared
 
   gem 'gitlab-housekeeper', path: 'gems/gitlab-housekeeper', feature_category: :tooling
@@ -557,7 +557,7 @@ group :development, :test do
 end
 
 group :development, :test, :danger do
-  gem 'gitlab-dangerfiles', '~> 4.9.0', require: false, feature_category: :tooling
+  gem 'gitlab-dangerfiles', '~> 4.9.2', require: false, feature_category: :tooling
 end
 
 group :development, :test, :coverage do
@@ -605,7 +605,7 @@ group :test do
   # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
   gem 'derailed_benchmarks', require: false, feature_category: :shared
 
-  gem 'gitlab_quality-test_tooling', '~> 2.10.0', require: false, feature_category: :tooling
+  gem 'gitlab_quality-test_tooling', '~> 2.11.0', require: false, feature_category: :tooling
 end
 
 gem 'octokit', '~> 9.0', feature_category: :importers
