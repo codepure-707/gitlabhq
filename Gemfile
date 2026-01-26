@@ -83,7 +83,7 @@ gem 'declarative_policy', '~> 1.1.0', feature_category: :shared
 gem 'coverband', '6.1.5', require: false, feature_category: :shared
 
 # Authentication libraries
-gem 'devise', '~> 4.9.3', feature_category: :system_access
+gem 'devise', '~> 5.0.0', feature_category: :system_access
 gem 'devise-pbkdf2-encryptable', '~> 0.0.0', path: 'vendor/gems/devise-pbkdf2-encryptable',
   feature_category: :system_access
 gem 'bcrypt', '~> 3.1', '>= 3.1.14', feature_category: :system_access
@@ -254,7 +254,7 @@ gem 'html-pipeline', '~> 2.14.3', feature_category: :markdown
 gem 'deckar01-task_list', '2.3.4', feature_category: :markdown
 gem 'gitlab-markup', '~> 2.0.0', require: 'github/markup', feature_category: :markdown
 gem 'commonmarker', '~> 0.23.10', feature_category: :markdown
-gem 'kramdown', '~> 2.5.0', feature_category: :markdown
+gem 'kramdown', '~> 2.5.2', feature_category: :markdown
 gem 'RedCloth', '~> 4.3.3', feature_category: :markdown
 gem 'org-ruby', '~> 0.9.12', feature_category: :markdown
 gem 'creole', '~> 0.5.0', feature_category: :markdown
